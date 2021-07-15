@@ -1,0 +1,165 @@
+Bài tìm hi?u v? TypeScript
+
+1. N?i dung
+
+a. TypeScript là gì?
+TypeScript là m?t d? án mã ngu?n m? ???c phát tri?n b?i Microsoft, nó có th? ???c coi là m?t phiên b?n nâng cao c?a Javascript b?i vi?c b? sung tùy ch?n ki?u t?nh và l?p h??ng ??i t??ng mà ?i?u này không có ? Javascript. TypeScript có th? s? d?ng ?? phát tri?n các ?ng d?ng ch?y ? client-side (Angular2) và server-side (NodeJS).
+
+b. Install
+- Ch?y l?nh sau ?? install TypeScript (nh? install nodejs tr??c):
+npm install -g typescript
+- Compile:
+tsc index.ts
+=> Vi?c này s? giúp t?o ra file index.js
+c. Type basic
+c.1 Boolean:
+var isDone: boolean = true;
+c.2 String:
+var name: boolean = "nguyen thi A";
+c.3 Number:
+var height: number = 8;
+c.4 Array :
+ có 2 ki?u khai báo t??ng ???ng v?i nhau trong TypeScript
+1: var list: boolean[] = [true, false];
+2: var isDone: Array<boolean> = [true, false];
+c.5 Enum: 
+- khi khai báo enum m?t cách thông th??ng các ph?n t? s? ???c ?ánh s? t? 0 và t?ng d?n
+enum Color{Red, Green, Blue};
+var c: Color = Color.Green
+.var colorName = Color[1] // k?t qu? s? là Green
+=> Khi m?n ph?n t? ??u tiên là 1 ch? không ph?i là 0 nh? m?c ??nh thì c?n khai báo nh? sau:
+
+enum Color{Red = 1, Green, Blue};
+var c: Color = Color.Green
+var colorName = Color[1] // k?t qu? s? là Red
+c.6 Any: 
+Any là m?t ki?u mà b?n có th? gán b?t k? ki?u nào cho nó.
+var notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // khai báo này hoàn toàn ???c ch?p nh?n. 
+                 // n?u notSure ban ??u khai báo và number thì
+                 // t?i ?ây ch?c ch?n s? có l?i
+
+var list:any[] = [1, true, "free"]; // n?u s? d?ng var list:number[] thì
+                                    // t?t c? các ph?n t? trong list s? ph?i là ki?u number
+list[1] = 100;
+c. 7 Void: 
+C?ng gi?ng nh? any nh?ng void ???c s? d?ng là ??u ra c?a hàm.
+function warnUser(): void {
+ alert("This is my warning message");
+}
+Function:
+- C?ng gi?ng nh? javaScript, typeScript có 2 cách khai báo function
+
+Cách 1: //Named function
+function add(x, y) {
+    return x+y;
+}
+
+Cách 2: //Anonymous function
+var myAdd = function(x, y) { return x+y; };
+Class
+Xây d?ng và s? d?ng l?p trong TypeScript thì t??ng t? nh? trong JavaScript (xem L?p trong JavaScript tr??c, ch? có ?i?u các thu?c tính, tham s? ph??ng th?c ph?i khai báo v?i ki?u d? li?u c? th?). Ngoài ra v?i TypeScipt các ph??ng th?c, thu?c tính là chung, riêng, b?o v? (gi?ng C#) ???c khái báo v?i t? khóa public (m?c ??nh), private (không truy c?p ???c ngoài l?p), protected (gi?ng private, nh?ng l?p k? th?a truy c?p ???c).
+
+// Class
+
+class Employee{
+    // Cách 1
+      // public name:string // có th? truy c?p t? ngoài vào
+      // private age:number //local ch? n?m trong class, 0 th? thay ??i giá tr?
+      // readonly mail:boolean // Có th? truy c?p t? ngoài vào.0 th? thay ??i giá tr?
+      
+      // constructor(n:string,a:number,m:boolean){
+      //     this.name =n
+      //     this.age =a
+      //     this.mail =m
+      // }
+      // // function 
+    
+  // CÁch 2
+  //Hàm kh?i t?o
+      constructor(
+          public name:string,
+          private age:number,
+          readonly mail:true
+      )  {}
+      
+      //Khai báo m?t ph??ng th?c
+        print(){
+          return `Name:${this.name}, Age: ${this.age} , Mail:${this.mail}`
+      }
+  
+  }
+  //S? D?NG L?P
+
+//T?o m?t ??i t??ng t? l?p b?ng new
+  const huou = new Employee('huou',20,true)
+  //truy c?p thu?c tính ??i t??ng huou.name
+    //  console.log(huou.name)//->ok
+     // console.log(huou.age)-> ko ?c vì private ko truy c?p t? bên ngoài ?c
+    //  console.log(huou.mail)->ok, but not change value
+  // console.log(huou)
+  
+  //g?i m?t ph??ng th?c c?a ??i t??ng
+  //console.log(huou.print())
+  
+  const bob = new Employee('bob',25,true)
+  
+  // Dùng m?ng ?? xem nhi?u employee
+  
+  let employees:Employee[]=[]
+  employees.push(huou)
+  employees.push(bob)
+  
+  employees.forEach(haha=>
+      console.log(haha.name,haha.mail,haha.print()))
+
+MODULE
+ import {Employee} from './classType'
+ const X = new Employee('X',25,true)
+
+Interface 
+- Không gi?ng class, interface là m?t c?u trúc ?o ch? t?n t?i trong TypeScript. 
+- TypeScript dùng interface v?i m?c ?ích ch? y?u là ki?m tra ki?u.
+
+interface Person {
+    name:string
+    age:number
+    speak(lang:string):void
+    spend(amount:number):number
+}
+
+const huouu:Person={
+    name:'huou',
+    age:30,
+    // khai báo ph??ng th?c
+    speak(text:string):void{
+        console.log(text)
+    },
+    spend(amt:number):number{
+        return amt
+    }
+
+    
+}
+
+// console.log(huouu)
+
+const helloPerson = (onePerson:Person)=>
+console.log(`hello ${onePerson.name}`)
+// g?i l?i hàm
+helloPerson(huouu)
+
+2. Link tham kh?o
+Link:
+https://www.codecademy.com/learn/learn-typescript/modules/learn-typescript-types
+
+link web :
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+https://xuanthulab.net/tong-quan-ve-ngon-ngu-lap-trinh-typescript.html
+
+link web:
+https://viblo.asia/p/tim-hieu-typescript-va-kien-thuc-co-ban-PmeRQpnyGoB
+https://viblo.asia/p/typescript-cac-kieu-du-dieu-co-ban-bacsic-type-NbmvbarykYO
+
+link youtobe: https://www.youtube.com/watch?v=VNP-KBxtvF0
