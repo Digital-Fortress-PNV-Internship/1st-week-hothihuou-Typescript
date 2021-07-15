@@ -1,0 +1,171 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset163 Calibri;}{\f2\fnil\fcharset238 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\f0\fs40\lang9 B\'e0i t\'ecm hi\f1\lang1066\u7875?\f0\lang9 u v\f1\lang1066\u7873?\f0\lang9  TypeScript\par
+\b\fs32\par
+
+\pard\sa200\sl276\slmult1 1. N\f1\lang1066\u7897?\f0\lang9 i dung\par
+\b0\fs22\par
+\b a. TypeScript l\'e0 g\'ec?\b0\par
+TypeScript l\'e0 m\f1\lang1066\u7897?t d\u7921? \f0\lang1033\'e1n m\'e3 ngu\f1\lang1066\u7891?n m\u7903? \f2\'f0\u432?\f1\u7907?c ph\f0\lang1033\'e1t tri\f1\lang1066\u7875?n b\u7903?i Microsoft, n\f0\lang1033\'f3 c\'f3 th\f1\lang1066\u7875? \f2\'f0\u432?\f1\u7907?c coi l\f0\lang1033\'e0 m\f1\lang1066\u7897?t phi\f0\lang1033\'ean b\f1\lang1066\u7843?n n\f0\lang1033\'e2ng cao c\f1\lang1066\u7911?a Javascript b\u7903?i vi\u7879?c b\u7893? sung t\f0\lang1033\'f9y ch\f1\lang1066\u7885?n ki\u7875?u t\f2\u297?nh v\f0\lang1033\'e0 l\f1\lang1066\u7899?p h\f2\u432?\f1\u7899?ng \f2\'f0\f1\u7889?i t\f2\u432?\f1\u7907?ng m\f0\lang1033\'e0 \f2\'f0i\f1\lang1066\u7873?u n\f0\lang1033\'e0y kh\'f4ng c\'f3 \f1\lang1066\u7903? Javascript. TypeScript c\f0\lang1033\'f3 th\f1\lang1066\u7875? s\u7917? d\u7909?ng \f2\'f0\f1\u7875? ph\f0\lang1033\'e1t tri\f1\lang1066\u7875?n c\f0\lang1033\'e1c \f1\lang1066\u7913?ng d\u7909?ng ch\u7841?y \u7903? client-side (Angular2) v\f0\lang1033\'e0 server-side (NodeJS).\par
+\par
+\b b. Install\b0\par
+- Ch\f1\lang1066\u7841?y l\u7879?nh sau \f2\'f0\f1\u7875? install TypeScript (nh\u7899? install nodejs tr\f2\u432?\f1\u7899?c):\par
+\b npm install -g typescript\par
+\b0\f0\lang1033 - \f1\lang1066 Compile:\par
+tsc index.ts\par
+\f0\lang1033 => \f1\lang1066 Vi\u7879?c n\f0\lang1033\'e0y s\f1\lang1066\u7869? gi\f0\lang1033\'fap t\f1\lang1066\u7841?o ra file index.js\par
+\b\f0\lang9 c. Type basic\par
+c.1 Boolean:\b0\par
+var isDone: boolean = true;\par
+\b c.2 String:\b0\par
+var name: boolean = "nguyen thi A";\par
+\b c.3 Number:\b0\par
+var height: number = 8;\par
+\b c.4 Array :\par
+\b0  c\'f3 2 ki\f1\lang1066\u7875?u khai b\f0\lang1033\'e1o t\f2\u432?\u417?ng \'f0\u432?\u417?ng v\f1\lang1066\u7899?i nhau trong TypeScript\b\par
+\b0 1: var list: boolean[] = [true, false];\par
+2: var isDone: Array<boolean> = [true, false];\par
+\b\f0\lang1033 c.5 \f1\lang1066 Enum: \b0\par
+\f0\lang1033 - \f1\lang1066 khi khai b\f0\lang1033\'e1o enum m\f1\lang1066\u7897?t c\f0\lang1033\'e1ch th\'f4ng th\f2\u432?\f1\lang1066\u7901?ng c\f0\lang1033\'e1c ph\f1\lang1066\u7847?n t\u7917? s\u7869? \f2\'f0\u432?\f1\u7907?c \f2\'f0\f0\lang1033\'e1nh s\f1\lang1066\u7889? t\u7915? 0 v\f0\lang1033\'e0 t\f2\'e3ng d\f1\lang1066\u7847?n\par
+enum Color\{Red, Green, Blue\};\par
+var c: Color = Color.Green\par
+\f0\lang1033 .\f1\lang1066 var colorName = Color[1] // k\u7871?t qu\u7843? s\u7869? l\f0\lang1033\'e0 Green\par
+=> Khi m\f1\lang1066\u7889?n ph\u7847?n t\u7917? \f2\'f0\f1\u7847?u ti\f0\lang1033\'ean l\'e0 1 ch\f1\lang1066\u7913? kh\f0\lang1033\'f4ng ph\f1\lang1066\u7843?i l\f0\lang1033\'e0 0 nh\f2\u432? m\f1\lang1066\u7863?c \f2\'f0\f1\u7883?nh th\f0\lang1033\'ec c\f1\lang1066\u7847?n khai b\f0\lang1033\'e1o nh\f2\u432? sau:\par
+\par
+enum Color\{Red = 1, Green, Blue\};\par
+var c: Color = Color.Green\par
+var colorName = Color[1] // k\f1\lang1066\u7871?t qu\u7843? s\u7869? l\f0\lang1033\'e0 Red\par
+\b c.6 Any: \b0\par
+Any l\'e0 m\f1\lang1066\u7897?t ki\u7875?u m\f0\lang1033\'e0 b\f1\lang1066\u7841?n c\f0\lang1033\'f3 th\f1\lang1066\u7875? g\f0\lang1033\'e1n b\f1\lang1066\u7845?t k\u7923? ki\u7875?u n\f0\lang1033\'e0o cho n\'f3.\par
+var notSure: any = 4;\par
+notSure = "maybe a string instead";\par
+notSure = false; // khai b\'e1o n\'e0y ho\'e0n to\'e0n \f2\'f0\u432?\f1\lang1066\u7907?c ch\u7845?p nh\u7853?n. \par
+                 // n\u7871?u notSure ban \f2\'f0\f1\u7847?u khai b\f0\lang1033\'e1o v\'e0 number th\'ec\par
+                 // t\f1\lang1066\u7841?i \f2\'f0\f0\lang1033\'e2y ch\f1\lang1066\u7855?c ch\u7855?n s\u7869? c\f0\lang1033\'f3 l\f1\lang1066\u7895?i\par
+\par
+var list:any[] = [1, true, "free"]; // n\u7871?u s\u7917? d\u7909?ng var list:number[] th\f0\lang1033\'ec\par
+                                    // t\f1\lang1066\u7845?t c\u7843? c\f0\lang1033\'e1c ph\f1\lang1066\u7847?n t\u7917? trong list s\u7869? ph\u7843?i l\f0\lang1033\'e0 ki\f1\lang1066\u7875?u number\par
+list[1] = 100;\par
+\b\f0\lang1033 c. 7 \f1\lang1066 Void: \b0\par
+C\f2\u361?ng gi\f1\u7889?ng nh\f2\u432? any nh\u432?ng void \'f0\u432?\f1\u7907?c s\u7917? d\u7909?ng l\f0\lang1033\'e0 \f2\'f0\f1\lang1066\u7847?u ra c\u7911?a h\f0\lang1033\'e0m.\par
+function warnUser(): void \{\par
+ alert("This is my warning message");\par
+\}\par
+\b\fs24 Function:\b0\fs22\par
+- C\f2\u361?ng gi\f1\lang1066\u7889?ng nh\f2\u432? javaScript, typeScript c\f0\lang1033\'f3 2 c\'e1ch khai b\'e1o function\par
+\par
+\b C\'e1ch 1\b0 : //Named function\par
+function add(x, y) \{\par
+    return x+y;\par
+\}\par
+\par
+\b C\'e1ch 2\b0 : //Anonymous function\par
+var myAdd = function(x, y) \{ return x+y; \};\par
+\b\fs28\lang9 Class\par
+\b0\fs22 X\'e2y d\f1\lang1066\u7921?ng v\f0\lang1033\'e0 s\f1\lang1066\u7917? d\u7909?ng l\u7899?p trong TypeScript th\f0\lang1033\'ec t\f2\u432?\u417?ng t\f1\lang1066\u7921? nh\f2\u432? trong JavaScript (xem L\f1\u7899?p trong JavaScript tr\f2\u432?\f1\u7899?c, ch\u7881? c\f0\lang1033\'f3 \f2\'f0i\f1\lang1066\u7873?u c\f0\lang1033\'e1c thu\f1\lang1066\u7897?c t\f0\lang1033\'ednh, tham s\f1\lang1066\u7889? ph\f2\u432?\u417?ng th\f1\u7913?c ph\u7843?i khai b\f0\lang1033\'e1o v\f1\lang1066\u7899?i ki\u7875?u d\u7919? li\u7879?u c\u7909? th\u7875?). Ngo\f0\lang1033\'e0i ra v\f1\lang1066\u7899?i TypeScipt c\f0\lang1033\'e1c ph\f2\u432?\u417?ng th\f1\lang1066\u7913?c, thu\u7897?c t\f0\lang1033\'ednh l\'e0 chung, ri\'eang, b\f1\lang1066\u7843?o v\u7879? (gi\u7889?ng C#) \f2\'f0\u432?\f1\u7907?c kh\f0\lang1033\'e1i b\'e1o v\f1\lang1066\u7899?i t\u7915? kh\f0\lang1033\'f3a public (m\f1\lang1066\u7863?c \f2\'f0\f1\u7883?nh), private (kh\f0\lang1033\'f4ng truy c\f1\lang1066\u7853?p \f2\'f0\u432?\f1\u7907?c ngo\f0\lang1033\'e0i l\f1\lang1066\u7899?p), protected (gi\u7889?ng private, nh\f2\u432?ng l\f1\u7899?p k\u7871? th\u7915?a truy c\u7853?p \f2\'f0\u432?\f1\u7907?c).\par
+\par
+// Class\par
+\par
+class Employee\{\b\par
+    // C\f0\lang1033\'e1ch 1\par
+\b0       // public name:string // c\'f3 th\f1\lang1066\u7875? truy c\u7853?p t\u7915? ngo\f0\lang1033\'e0i v\'e0o\par
+      // private age:number //local ch\f1\lang1066\u7881? n\u7857?m trong class, 0 th\u7875? thay \f2\'f0\f1\u7893?i gi\f0\lang1033\'e1 tr\f1\lang1066\u7883?\par
+      // readonly mail:boolean // C\f0\lang1033\'f3 th\f1\lang1066\u7875? truy c\u7853?p t\u7915? ngo\f0\lang1033\'e0i v\'e0o.0 th\f1\lang1066\u7875? thay \f2\'f0\f1\u7893?i gi\f0\lang1033\'e1 tr\f1\lang1066\u7883?\par
+      \par
+      // constructor(n:string,a:number,m:boolean)\{\par
+      //     this.name =n\par
+      //     this.age =a\par
+      //     this.mail =m\par
+      // \}\par
+      // // function \par
+    \b\par
+  // C\f0\lang1033\'c1ch 2\par
+\b0   //H\'e0m kh\f1\lang1066\u7903?i t\u7841?o\par
+      constructor(\par
+          public name:string,\par
+          private age:number,\par
+          readonly mail:true\par
+      )  \{\}\par
+      \par
+      //Khai b\f0\lang1033\'e1o m\f1\lang1066\u7897?t ph\f2\u432?\u417?ng th\f1\u7913?c\par
+        print()\{\par
+          return `Name:$\{this.name\}, Age: $\{this.age\} , Mail:$\{this.mail\}`\par
+      \}\par
+  \par
+  \}\par
+\b   //S\u7916? D\u7908?NG L\u7898?P\par
+\b0\par
+//T\u7841?o m\u7897?t \f2\'f0\f1\u7889?i t\f2\u432?\f1\u7907?ng t\u7915? l\u7899?p b\u7857?ng new\par
+  const huou = new Employee('huou',20,true)\par
+  //truy c\u7853?p thu\u7897?c t\f0\lang1033\'ednh \f2\'f0\f1\lang1066\u7889?i t\f2\u432?\f1\u7907?ng huou.name\par
+    //  console.log(huou.name)//->ok\par
+     // console.log(huou.age)-> ko \f2\'f0c v\f0\lang1033\'ec private ko truy c\f1\lang1066\u7853?p t\u7915? b\f0\lang1033\'ean ngo\'e0i \f2\'f0c\par
+    //  console.log(huou.mail)->ok, but not change value\par
+  // console.log(huou)\par
+  \par
+  //g\f1\lang1066\u7885?i m\u7897?t ph\f2\u432?\u417?ng th\f1\u7913?c c\u7911?a \f2\'f0\f1\u7889?i t\f2\u432?\f1\u7907?ng\par
+  //console.log(huou.print())\par
+  \par
+  const bob = new Employee('bob',25,true)\par
+  \par
+  // D\f0\lang1033\'f9ng m\f1\lang1066\u7843?ng \f2\'f0\f1\u7875? xem nhi\u7873?u employee\par
+  \par
+  let employees:Employee[]=[]\par
+  employees.push(huou)\par
+  employees.push(bob)\par
+  \par
+  employees.forEach(haha=>\par
+      console.log(haha.name,haha.mail,haha.print()))\par
+\b\f0\lang9\par
+MODULE\b0\par
+ import \{Employee\} from './classType'\par
+ const X = new Employee('X',25,true)\par
+\par
+\b\fs24 Interface \par
+\b0 - Kh\'f4ng gi\f1\lang1066\u7889?ng class, interface l\f0\lang1033\'e0 m\f1\lang1066\u7897?t c\u7845?u tr\f0\lang1033\'fac \f1\lang1066\u7843?o ch\u7881? t\u7891?n t\u7841?i trong TypeScript. \par
+\f0\lang1033 - \f1\lang1066 TypeScript d\f0\lang1033\'f9ng interface v\f1\lang1066\u7899?i m\u7909?c \f2\'f0\f0\lang1033\'edch ch\f1\lang1066\u7911? y\u7871?u l\f0\lang1033\'e0 ki\f1\lang1066\u7875?m tra ki\u7875?u.\par
+\par
+interface Person \{\par
+    name:string\par
+    age:number\par
+    speak(lang:string):void\par
+    spend(amount:number):number\par
+\}\par
+\par
+const huouu:Person=\{\par
+    name:'huou',\par
+    age:30,\par
+    // khai b\f0\lang1033\'e1o ph\f2\u432?\u417?ng th\f1\lang1066\u7913?c\par
+    speak(text:string):void\{\par
+        console.log(text)\par
+    \},\par
+    spend(amt:number):number\{\par
+        return amt\par
+    \}\par
+\par
+    \par
+\}\par
+\par
+// console.log(huouu)\par
+\par
+const helloPerson = (onePerson:Person)=>\par
+console.log(`hello $\{onePerson.name\}`)\par
+// g\u7885?i l\u7841?i h\f0\lang1033\'e0m\par
+helloPerson(huouu)\b\lang9\par
+\b0\fs22\par
+\b\fs28 2. Link tham kh\f1\lang1066\u7843?\f0\lang9 o\b0\fs22\par
+Link:\par
+{{\field{\*\fldinst{HYPERLINK https://www.codecademy.com/learn/learn-typescript/modules/learn-typescript-types }}{\fldrslt{https://www.codecademy.com/learn/learn-typescript/modules/learn-typescript-types\ul0\cf0}}}}\f0\fs22\par
+\par
+link web :\par
+{{\field{\*\fldinst{HYPERLINK https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html }}{\fldrslt{https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://xuanthulab.net/tong-quan-ve-ngon-ngu-lap-trinh-typescript.html }}{\fldrslt{https://xuanthulab.net/tong-quan-ve-ngon-ngu-lap-trinh-typescript.html\ul0\cf0}}}}\f0\fs22\par
+\par
+link web:\par
+{{\field{\*\fldinst{HYPERLINK https://viblo.asia/p/tim-hieu-typescript-va-kien-thuc-co-ban-PmeRQpnyGoB }}{\fldrslt{https://viblo.asia/p/tim-hieu-typescript-va-kien-thuc-co-ban-PmeRQpnyGoB\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://viblo.asia/p/typescript-cac-kieu-du-dieu-co-ban-bacsic-type-NbmvbarykYO }}{\fldrslt{https://viblo.asia/p/typescript-cac-kieu-du-dieu-co-ban-bacsic-type-NbmvbarykYO\ul0\cf0}}}}\f0\fs22\par
+\par
+link youtobe: {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=VNP-KBxtvF0 }}{\fldrslt{https://www.youtube.com/watch?v=VNP-KBxtvF0\ul0\cf0}}}}\f0\fs22\par
+}
+ 
